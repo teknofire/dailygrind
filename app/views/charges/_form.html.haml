@@ -1,0 +1,12 @@
+= form_for charge do |f|
+  = f.label :name
+  = f.text_field :name, class: 'span12'
+  
+  = f.label :amount
+  = f.text_field :amount, :min => 0, :step => 0.5, class: 'span12'
+  
+  .actions.pull-right
+    = link_to root_url, class: 'btn' do
+      %i.icon-arrow-left
+      Back
+    = f.submit 'Save', class: 'btn btn-primary'

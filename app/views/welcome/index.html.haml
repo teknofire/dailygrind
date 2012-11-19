@@ -1,0 +1,9 @@
+- if current_user.nil?
+  .hero-unit
+    %h2 Sign in to access your balance
+- else
+  .row
+    .span8.offset2.coffee-buttons
+      .hero-unit
+        = link_to 'Caffinate!', '#', class: 'btn btn-primary btn-block'
+        = link_to 'Add Funds', new_charge_path, class: 'btn btn-large btn-block'

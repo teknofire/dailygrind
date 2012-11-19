@@ -1,0 +1,21 @@
+@import 'bootstrap';
+@import 'bootstrap-responsive';
+
+#header li.user a {
+  padding-left: 42px;
+  padding-right: 3px;
+  background-repeat: no-repeat;
+}
+
+#header .balance {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.coffee-buttons {
+  text-align: center;
+  .btn-primary {
+    font-size: 2em;
+    padding: 2em;
+  }
+}

@@ -1,4 +1,6 @@
 Dailygrind::Application.routes.draw do
+  resources :charges
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -46,9 +48,14 @@ Dailygrind::Application.routes.draw do
   #     resources :products
   #   end
 
+  match '/signin' => 'sessions#new', :as => :signin
+  match '/signout' => 'sessions#destroy', :as => :signout
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure' => 'sessions#failure'
+  
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
