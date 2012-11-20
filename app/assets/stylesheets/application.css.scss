@@ -15,7 +15,12 @@
 .coffee-buttons {
   text-align: center;
   .btn-primary {
+    margin: 10px 0;
     font-size: 2em;
     padding: 2em;
   }
+}
+
+.cup {
+  width: 50px;
 }
