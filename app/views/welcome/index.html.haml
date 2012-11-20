@@ -3,7 +3,10 @@
     %h2 Sign in to access your balance
 - else
   .row
-    .span8.offset2.coffee-buttons
-      .hero-unit
+    .span12
+      .coffee-buttons
         = link_to 'Caffinate!', '#', class: 'btn btn-primary btn-block'
-        = link_to 'Add Funds', new_charge_path, class: 'btn btn-large btn-block'
+      
+      %h3 Available Coffee
+      - current_user.cups.to_i.times do |i|
+        .pull-left.cup{style:"max-width:50px; margin: 5px;"}= image_tag 'coffee-cup.svg'
