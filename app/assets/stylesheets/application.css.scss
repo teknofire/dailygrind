@@ -1,6 +1,10 @@
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
+#header.navbar-static-top {
+  width: inherit;
+}
+
 #header li.user a {
   padding-left: 42px;
   padding-right: 3px;

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChargeTest < ActiveSupport::TestCase
+class CoffeeChargesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

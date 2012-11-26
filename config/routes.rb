@@ -1,5 +1,12 @@
 Dailygrind::Application.routes.draw do
-  resources :charges
+  resources :transactions do
+    collection do
+      post :caffinate
+      get :add_funds
+    end
+  end
+  
+  resources :coffee_charges
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

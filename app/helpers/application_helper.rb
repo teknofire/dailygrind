@@ -2,11 +2,21 @@ module ApplicationHelper
   def flash_messages
     output = ""
     flash.each do |type,msg|
-      output << content_tag(:div, class: "alert alert-#{type}") do
-        "#{msg} #{link_to 'x', '#', class: 'close', "data-dismiss" => "alert"}".html_safe
+      if msg.is_a? Array
+        msg.each do |m|
+          output << message(type, m)
+        end
+      else
+        output << message(type, msg)
       end
     end
     output.html_safe
+  end
+  
+  def message(type, text)
+    content_tag(:div, class: "alert alert-#{type}") do
+      "#{text} #{link_to 'x', '#', class: 'close', "data-dismiss" => "alert"}".html_safe
+    end
   end
   
   def avatar_url(email, size=48)

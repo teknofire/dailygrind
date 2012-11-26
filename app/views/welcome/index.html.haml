@@ -5,8 +5,19 @@
   .row
     .span12
       .coffee-buttons
-        = link_to 'Caffinate!', '#', class: 'btn btn-primary btn-block'
-      
+        = form_for @transaction do |f|
+          = hidden_field :caffinate, value: true
+          = f.hidden_field :name, value: 'Coffee'
+          = f.hidden_field :amount, value: -0.5
+          = f.submit 'Caffinate!', class: 'btn btn-primary'
+  .row
+    .span6
       %h3 Available Coffee
-      - current_user.cups.to_i.times do |i|
+      - current_user.cups.times do |i|
+        .pull-left.cup{style:"max-width:50px; margin: 5px;"}= image_tag 'coffee-cup.svg'
+    .span6
+      %h3 
+        Drank this week
+        %small= "#{@start_date.strftime('%D')} - #{@end_date.strftime('%D')}"
+      - @drank_this_week.count.times do |i|
         .pull-left.cup{style:"max-width:50px; margin: 5px;"}= image_tag 'coffee-cup.svg'

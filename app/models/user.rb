@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :authorizations
   
-  has_many :charges
+  has_many :transactions
+  has_many :coffee_charges
   
   attr_accessible :name, :email
   
@@ -13,10 +14,10 @@ class User < ActiveRecord::Base
   end
   
   def balance
-    charges.sum(:amount)
+    transactions.sum(:amount)
   end
   
   def cups
-    self.balance / 0.5
+    (self.balance / 0.5).to_i
   end
 end

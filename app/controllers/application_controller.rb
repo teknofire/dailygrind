@@ -27,6 +27,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def require_login
+    if current_user.nil?
+      session[:redirect_back_location] = request.url
+      redirect_to signin_path
+    end
+  end
+  
   def require_admin_auth
     if current_user.nil?
       session[:redirect_back_location] = request.url

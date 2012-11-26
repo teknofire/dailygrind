@@ -1,4 +1,10 @@
-= form_for charge do |f|
+= form_for transaction do |f|
+  - if transaction.errors.any?
+    #error_explanation.alert.alert-error
+      %ul.nav.nav-list
+        - transaction.errors.full_messages.each do |msg|
+          %li= msg
+
   = f.label :name
   = f.text_field :name, class: 'span12'
   
