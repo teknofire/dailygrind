@@ -10,8 +10,10 @@
     #header.navbar.navbar-static-top
       .navbar-inner
         .container
-          .pull-left= image_tag 'coffee_maker.svg', style: 'height: 40px;'
-          = link_to root_url, class: 'brand' do
+          .pull-left
+            = link_to root_url do
+              = image_tag 'coffee_maker.svg', style: 'height: 40px;'
+          = link_to root_url, class: 'brand hidden-phone' do
             Daily Grind
             
           %ul.nav.pull-right
