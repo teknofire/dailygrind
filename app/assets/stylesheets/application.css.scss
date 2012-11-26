@@ -1,6 +1,10 @@
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
+#header {
+  margin-bottom: 3px;
+}
+
 #header.navbar-static-top {
   width: inherit;
 }
