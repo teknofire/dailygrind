@@ -3,7 +3,7 @@ class Transaction < ActiveRecord::Base
   
   belongs_to :user
   
-  validate :funds_must_be_positive
+  #validate :funds_must_be_positive
   
   def funds_must_be_positive
     if self.amount < 0

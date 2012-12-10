@@ -24,7 +24,7 @@
                   Sign In
             - else
               %li
-                %p.navbar-text.balance
+                %p.navbar-text.balance{class:(current_user.balance < 0 ? 'text-error' : 'text-success')}
                   Balance
                   = number_to_currency current_user.balance 
                 
