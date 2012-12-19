@@ -1,6 +1,8 @@
 Dailygrind web application 
 ==========================
 
+[![Dependency Status](https://gemnasium.com/teknofire/dailygrind.png)](https://gemnasium.com/teknofire/dailygrind)
+
 Help track coffee usages and money at work
 
 Todo
