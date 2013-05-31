@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   def create
     unless @auth = Authorization.find_from_hash(auth_hash)
       @auth = Authorization.create_from_hash(auth_hash, current_user)
@@ -28,7 +30,6 @@ class SessionsController < ApplicationController
   protected
   
   def auth_hash
-    logger.info request.env['omniauth.auth']
     request.env['omniauth.auth']
   end
 end
