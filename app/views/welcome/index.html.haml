@@ -5,7 +5,10 @@
   .row
     .span12
       .coffee-buttons
-        = link_to 'Caffinate!', caffinate_path, class: 'btn btn-primary'
+        - if params[:caffinated]
+          = link_to 'Caffination Success', root_url, class: 'btn btn-success'
+        - else
+          = link_to 'Caffinate!', caffinate_path, class: 'btn btn-primary'
         / = form_for @transaction do |f|
         /   / = f.hidden_field :caffinate, value: true
         /   = f.hidden_field :name, value: 'Coffee'
