@@ -55,6 +55,7 @@ Dailygrind::Application.routes.draw do
   #     resources :products
   #   end
 
+  match '/caffinate' => 'coffee_charges#caffinate', :as => :caffinate
   match '/signin' => 'sessions#new', :as => :signin
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/:provider/callback', :to => 'sessions#create'
