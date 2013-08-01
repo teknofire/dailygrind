@@ -55,11 +55,11 @@ Dailygrind::Application.routes.draw do
   #     resources :products
   #   end
 
-  match '/caffinate' => 'coffee_charges#caffinate', :as => :caffinate
-  match '/signin' => 'sessions#new', :as => :signin
-  match '/signout' => 'sessions#destroy', :as => :signout
-  match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/auth/failure' => 'sessions#failure'
+  get '/caffinate' => 'coffee_charges#caffinate', :as => :caffinate
+  get '/signin' => 'sessions#new', :as => :signin
+  get '/signout' => 'sessions#destroy', :as => :signout
+  post '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/failure' => 'sessions#failure'
   
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
