@@ -13,6 +13,14 @@ class User < ActiveRecord::Base
     create(:name => hash['info']['name'], :email => hash['info']['email'])
   end
   
+  def self.create_or_find_from_hash!(hash)
+    user = where(email: hash['info']['email'].downcase).first
+    user = create!(:name => hash['info']['name'], :email => hash['info']['email'].downcase) if user.nil?
+    
+    user
+  end
+  
+  
   def balance
     transactions.sum(:amount)
   end
