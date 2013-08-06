@@ -39,6 +39,7 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'capistrano-rbenv'
+gem 'puma'
 
 # To use debugger
 # gem 'debugger'
