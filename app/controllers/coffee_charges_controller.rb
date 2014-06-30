@@ -10,7 +10,7 @@ class CoffeeChargesController < TransactionsController
   def caffinate
     @transaction = current_user.coffee_charges.build({
       name: 'Coffee',
-      amount: -0.5
+      amount: -CoffeeCharge.default_price
     })
     handle_transaction_request :on_error => lambda { 
       flash[:error] = @transaction.errors.full_messages

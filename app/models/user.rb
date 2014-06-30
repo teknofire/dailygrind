@@ -26,6 +26,6 @@ class User < ActiveRecord::Base
   end
   
   def cups
-    (self.balance / 0.5).to_i
+    (self.balance / 0.55).to_i
   end
 end

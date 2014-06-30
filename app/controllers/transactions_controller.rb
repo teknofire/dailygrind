@@ -32,7 +32,7 @@ class TransactionsController < ApplicationController
           if @transaction.amount > 0
             flash[:success] = "Added #{helpers.number_to_currency(@transaction.amount)} to your funds"
           else
-            flash[:success] = "Deducted #{helpers.number_to_currency(@transaction.amount)} from your funds"
+            flash[:success] = "Deducted #{helpers.number_to_currency(@transaction.amount.abs)} from your funds"
           end
           opts[:on_success].call
         }
