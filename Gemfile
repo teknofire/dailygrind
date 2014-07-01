@@ -40,5 +40,6 @@ gem 'capistrano'
 gem 'capistrano-rbenv'
 gem 'puma'
 
+gem 'rails_12factor', group: :production
 # To use debugger
 # gem 'debugger'
