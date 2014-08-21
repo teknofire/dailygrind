@@ -7,7 +7,7 @@ class CoffeeChargesController < TransactionsController
     }
   end
   
-  def caffinate
+  def caffeinate
     @transaction = current_user.coffee_charges.build({
       name: 'Coffee',
       amount: -CoffeeCharge.default_price

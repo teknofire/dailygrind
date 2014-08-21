@@ -14,7 +14,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
   end
   
-  def caffinate
+  def caffeinate
     
   end
   
@@ -22,8 +22,8 @@ class TransactionsController < ApplicationController
   
   def handle_transaction_request(opts = {})
     opts[:on_error] ||= lambda { render :action => 'new' }
-    opts[:on_success] ||= lambda { redirect_to root_url(caffinated: true) }
-    @caffinated = true
+    opts[:on_success] ||= lambda { redirect_to root_url(caffeinated: true) }
+    @caffeinated = true
     
     helpers = Object.new.extend(ActionView::Helpers::NumberHelper)
     if @transaction.save
